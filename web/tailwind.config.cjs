@@ -12,7 +12,7 @@ module.exports = {
       keyframes: {
         pokeball: {
           "0%": { transform: "scale(0) rotate(0deg)" },
-          "100%": { transform: "scale(1) rotate(90deg)" },
+          "100%": { transform: "scale(1) rotate(60deg)" },
         },
       },
     },

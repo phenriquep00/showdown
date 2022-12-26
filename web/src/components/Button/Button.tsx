@@ -1,22 +1,18 @@
 import { ButtonHTMLAttributes } from "react";
-import { PrimaryButton } from "./PrimaryButton";
-import { SecondaryButton } from "./SecondaryButton";
-import { TertiaryButton } from "./TertiaryButton";
+import { Pokeball } from "../Pokeball/Pokeball";
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  as: "primary" | "secondary" | "tertiary";
+  as?: "primary" | "secondary" | "tertiary";
 }
 
 export function Button(props: IButton) {
   return (
-    <button {...props}>
-      {props.as === "primary" ? (
-        <PrimaryButton />
-      ) : props.as === "secondary" ? (
-        <SecondaryButton />
-      ) : props.as === "tertiary" ? (
-        <TertiaryButton />
-      ) : null}
+    <button {...props} className="flex flex-row gap-2 justify-center items-center group text-lg font-semibold">
+      <Pokeball />
+      <span className="flex border-2 rounded px-4 -ml-5 group-hover:bg-opacity-50 group-focus:bg-opacity-50">
+        {props.children}
+      </span>
+      
     </button>
   );
 }
