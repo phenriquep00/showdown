@@ -7,12 +7,14 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button(props: IButton) {
   return (
-    <button {...props} className="flex flex-row gap-2 justify-center items-center group text-lg font-semibold">
+    <button
+      {...props}
+      className="flex flex-row gap-2 justify-center items-center group text-lg font-semibold"
+    >
       <Pokeball />
-      <span className="flex border-2 rounded px-4 -ml-5 group-hover:bg-opacity-50 group-focus:bg-opacity-50">
+      <span className="flex border-2 bg-white text-black rounded px-4 -ml-5 group-hover:bg-opacity-50 group-focus:bg-opacity-80">
         {props.children}
       </span>
-      
     </button>
   );
 }
